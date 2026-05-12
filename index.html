@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invitación XV - Valeria</title>
+
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="rotate-warning">
+    <div class="rotate-box">
+        <p>📱 Por favor gira tu celular en horizontal para ver la invitación</p>
+    </div>
+</div>
+
+    <div id="intro-video-container">
+    <video id="introVideo">
+        <source src="IntroDisney.mp4" type="video/mp4">
+    </video>
+</div>
+
+<audio id="introSound" src="Veo en ti.mp3"></audio>
+
+<audio id="music" src="Veo en ti.mp3" loop></audio>
+
+<!-- 💌 CARTA -->
+<section class="letter-scene section-anim">
+
+    <div class="letter-wrapper">
+        <img src="Cq.png" class="letter-img" onclick="enterSite()">
+    </div>
+
+</section>
+
+<!-- 🏮 LINTERNAS -->
+<div id="lantern-container"></div>
+
+<!-- 🎬 SECCIÓN PRINCIPAL -->
+<section class="hero-pro section-anim" id="mainContent">
+
+
+</section>
+
+<!-- 🎬 SECCIÓN Informativa -->
+<section class="hero-Info section-anim" id="Info">
+
+</div>
+
+
+</section>
+
+<!-- 🎬 SECCIÓN 5 - UBICACIONES -->
+<section class="hero-locations section-anim" id="Locations">
+
+    <div class="Tittle">
+        <H1>Ver ubicaciones 📍:</H1>
+    </div>
+
+    <div class="locations-cards">
+
+    <div class="location-card" onclick="openChurch()">
+        <img src="iglesia.jpg" alt="Iglesia">
+        <h3>⛪ Iglesia del Sagrado Corazon de Jesus</h3>
+        <p>Ver ubicación</p>
+    </div>
+
+    <div class="location-card" onclick="openHall()">
+        <img src="Jardin.jpg" alt="Jardin">
+        <h3>🎉 Jardin de eventos MG</h3>
+        <p>Ver ubicación</p>
+    </div>
+
+</div>
+
+</section>
+
+<!-- 🎬 SECCIÓN CUENTA REGRESIVA -->
+<section class="hero-countdown section-anim"  id="Countdown">
+
+    <div class="countdown-box">
+        <h2>Faltan para mis XV ✨</h2>
+
+        <div class="timer">
+            <div><span id="days">00</span><p>Días</p></div>
+            <div><span id="hours">00</span><p>Horas</p></div>
+            <div><span id="minutes">00</span><p>Min</p></div>
+            <div><span id="seconds">00</span><p>Seg</p></div>
+        </div>
+
+        <button onclick="confirmarAsistencia()">Confirmar asistencia 💌</button>
+    </div>
+
+</section>
+
+<img src="Pascal.png" id="pascal">
+<script src="script.js"></script>
+</body>
+</html>

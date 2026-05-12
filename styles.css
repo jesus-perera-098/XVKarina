@@ -1,0 +1,420 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden; /* importante: sin scroll */
+    overflow-y: auto;
+}
+
+/* ✨ fondo mágico */
+.letter-scene {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)),
+        url('F2.png') center/cover no-repeat;
+}
+
+/* 💌 CONTENEDOR */
+.letter-wrapper {
+    position: relative;
+    animation: fadeZoom 2s ease;
+}
+
+/* 💌 CARTA */
+.letter-img {
+    width: 420px;
+    cursor: pointer;
+    transition: 0.4s;
+
+    filter: drop-shadow(0 0 20px rgba(255,215,0,0.6));
+}
+
+.letter-img:hover {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 50px gold);
+}
+
+/* ✨ GLOW SUAVE (sin cuadro raro) */
+.letter-wrapper::before {
+    content: "";
+    position: absolute;
+    width: 130%;
+    height: 130%;
+    top: -15%;
+    left: -15%;
+
+    background: radial-gradient(circle, rgba(255,215,0,0.4), transparent 70%);
+    filter: blur(50px);
+    z-index: -1;
+}
+
+/* ✨ EFECTO BRILLO BONITO */
+
+
+.letter-img {
+    width: 420px;
+    cursor: pointer;
+    transition: 0.4s;
+    position: relative;
+
+    filter: drop-shadow(0 0 20px rgba(255,215,0,0.6));
+}
+
+/* ✨ BRILLO REAL SIN RECTÁNGULO */
+.letter-img::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 60%;
+    height: 100%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.6),
+        transparent
+    );
+
+    transform: rotate(25deg);
+    animation: shine 4s infinite;
+    pointer-events: none;
+}
+
+@keyframes shine {
+    0% { left: -120%; }
+    100% { left: 120%; }
+}
+
+/* 🎬 ENTRADA */
+@keyframes fadeZoom {
+    from { opacity: 0; transform: scale(0.7); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* 🏮 LINTERNAS */
+#lantern-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.lantern {
+    position: absolute;
+    width: 15px;
+    height: 25px;
+    background: linear-gradient(#ffd700, #ffae00);
+    border-radius: 50%;
+    box-shadow: 0 0 20px gold, 0 0 40px orange;
+    animation: floatLantern linear infinite;
+}
+
+@keyframes floatLantern {
+    0% { transform: translateY(100vh); opacity: 0; }
+    20% { opacity: 1; }
+    100% { transform: translateY(-10vh); opacity: 0; }
+}
+
+/* =========================
+   🎬 HERO CINEMATOGRÁFICO
+========================= */
+
+.hero-pro {
+    position: relative;
+    min-height: 100vh;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+
+    background:
+       /* linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),*/
+        url('F5.jpeg') center/cover no-repeat;
+}
+
+
+.go-info {
+    position: absolute;
+    bottom: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.go-info button {
+    padding: 12px 25px;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+
+    background: rgba(255, 215, 0, 0.9);
+    color: black;
+
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+    transition: 0.3s;
+}
+
+.go-info button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px gold;
+}
+
+
+.hero-Info {
+    position: relative;
+    min-height: 100vh;
+    height: auto;
+    overflow: visible;
+
+   
+
+   background: url('S2.jpeg') center top / contain no-repeat;
+   background-color: black;
+}
+
+
+.hero-countdown {
+    position: relative;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: url('F1.png') center/cover no-repeat;
+}
+
+.countdown-box {
+    text-align: center;
+    color: white;
+    background: rgba(0,0,0,0.5);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255,215,0,0.3);
+}
+
+.countdown-box h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-family: 'Great Vibes', cursive;
+}
+
+.timer {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.timer div {
+    text-align: center;
+}
+
+.timer span {
+    font-size: 40px;
+    font-weight: bold;
+    color: gold;
+}
+
+.timer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.countdown-box button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+
+    background: gold;
+    color: black;
+    font-size: 16px;
+
+    box-shadow: 0 0 20px gold;
+    transition: 0.3s;
+}
+
+.countdown-box button:hover {
+    transform: scale(1.1);
+}
+
+.hero-locations {
+    position: relative;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+     padding-top: 80px;
+
+    background: url('FC1.jpeg') center/cover no-repeat;
+}
+.location-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+
+    border-radius: 15px;
+    margin-bottom: 12px;
+
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+.Tittle {
+    width: 100%;
+    text-align: center;
+
+    position: absolute;
+    top: 40px;
+    left: 0;
+    color: white;
+}
+
+.locations-box {
+    text-align: center;
+    color: white;
+}
+
+.locations-box h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 42px;
+    margin-bottom: 30px;
+    color: black;
+}
+
+.buttons-locations {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.locations-cards {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.location-card {
+    width: 200px;
+    padding: 25px;
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+
+    backdrop-filter: blur(10px);
+
+    color: white;
+    text-align: center;
+
+    cursor: pointer;
+    transition: 0.3s;
+
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+.location-card h3 {
+    color: goldenrod;
+    margin-bottom: 10px;
+}
+
+.location-card p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.location-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+}
+
+#pascal {
+    position: fixed;
+    width: 70px;
+    z-index: 9999;
+
+    left: 20px;
+    top: 20px;
+
+    pointer-events: none;
+
+    animation: pascalMove 12s infinite linear;
+}
+
+@keyframes pascalMove {
+    0%   { transform: translate(0,0) rotate(0deg); }
+    25%  { transform: translate(80vw, 10vh) rotate(10deg); }
+    50%  { transform: translate(60vw, 70vh) rotate(-10deg); }
+    75%  { transform: translate(10vw, 60vh) rotate(5deg); }
+    100% { transform: translate(0,0) rotate(0deg); }
+}
+
+.section-anim {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+}
+
+.section-anim.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#intro-video-container {
+    position: fixed;
+    inset: 0;
+    background: black;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+#introVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#rotate-warning {
+    position: fixed;
+    inset: 0;
+    background: black;
+    color: white;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    z-index: 999999;
+}
+
+.rotate-box {
+    padding: 20px;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+    #rotate-warning {
+        display: flex;
+    }
+
+    body {
+        overflow: hidden;
+    }
+}
