@@ -446,18 +446,6 @@ html {
         font-size: 24px;
     }
 
-    .timer {
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    .timer div {
-        width: 45%;
-    }
-
-    .timer span {
-        font-size: 28px;
-    }
 
     /* 🦎 pascal más pequeño */
     #pascal {
