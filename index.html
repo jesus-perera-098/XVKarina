@@ -3,83 +3,72 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Invitación XV - Karina</title>
+<title>Invitación XV - Valeria</title>
 
 <link rel="stylesheet" href="styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div id="rotate-warning">
-    <div class="rotate-box">
-        <p>📱 Por favor gira tu celular en horizontal para ver la invitación</p>
-    </div>
-</div>
 
-    <div id="intro-video-container">
+<!-- 🎬 INTRO VIDEO -->
+<div id="intro-video-container">
     <video id="introVideo">
         <source src="IntroDisney.mp4" type="video/mp4">
     </video>
 </div>
 
 <audio id="introSound" src="Veo en ti.mp3"></audio>
-
 <audio id="music" src="Veo en ti.mp3" loop></audio>
 
 <!-- 💌 CARTA -->
-<section class="letter-scene section-anim">
-
+<section class="letter-scene">
     <div class="letter-wrapper">
         <img src="Cq.png" class="letter-img" onclick="enterSite()">
     </div>
-
 </section>
 
 <!-- 🏮 LINTERNAS -->
 <div id="lantern-container"></div>
 
-<!-- 🎬 SECCIÓN PRINCIPAL -->
+<!-- 🎬 SECCIÓN 1 -->
 <section class="hero-pro section-anim" id="mainContent">
-
-
+    <div class="hero-wrap">
+        <img class="circulito" src="circulo.png">
+        <div class="Quinceanera">
+            <img src="KK1.png">
+        </div>
+    </div>
 </section>
 
-<!-- 🎬 SECCIÓN Informativa -->
+<!-- 🎬 SECCIÓN 2 -->
 <section class="hero-Info section-anim" id="Info">
-
-</div>
-
-
+    <div class="fondo"></div>
 </section>
 
-<!-- 🎬 SECCIÓN 5 - UBICACIONES -->
+<!-- 🎬 SECCIÓN 3 -->
 <section class="hero-locations section-anim" id="Locations">
-
     <div class="Tittle">
-        <H1>Ver ubicaciones 📍:</H1>
+        <h1>Ver ubicaciones 📍:</h1>
     </div>
 
     <div class="locations-cards">
+        <div class="location-card" onclick="openChurch()">
+            <img src="iglesia.jpg">
+            <h3>⛪ Iglesia del Sagrado Corazon de Jesus</h3>
+            <p>Ver ubicación</p>
+        </div>
 
-    <div class="location-card" onclick="openChurch()">
-        <img src="Iglesia.jpg" alt="Iglesia">
-        <h3>⛪ Iglesia del Sagrado Corazon de Jesus</h3>
-        <p>Ver ubicación</p>
+        <div class="location-card" onclick="openHall()">
+            <img src="Jardin.jpg">
+            <h3>🎉 Jardin de eventos MG</h3>
+            <p>Ver ubicación</p>
+        </div>
     </div>
-
-    <div class="location-card" onclick="openHall()">
-        <img src="Jardin.jpg" alt="Jardin">
-        <h3>🎉 Jardin de eventos MG</h3>
-        <p>Ver ubicación</p>
-    </div>
-
-</div>
-
 </section>
 
-<!-- 🎬 SECCIÓN CUENTA REGRESIVA -->
-<section class="hero-countdown section-anim"  id="Countdown">
-
+<!-- 🎬 SECCIÓN 4 -->
+<section class="hero-countdown section-anim" id="Countdown">
     <div class="countdown-box">
         <h2>Faltan para mis XV ✨</h2>
 
@@ -92,10 +81,10 @@
 
         <button onclick="confirmarAsistencia()">Confirmar asistencia 💌</button>
     </div>
-
 </section>
 
 <img src="Pascal.png" id="pascal">
+
 <script src="script.js"></script>
 </body>
 </html>
