@@ -356,9 +356,13 @@ html {
 
 @media (max-width: 768px) {
 
+    
+
     /* 🔓 permitir scroll normal */
     body {
-        overflow-y: auto;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden; /* bloqueado SIEMPRE al inicio */
     }
 
     /* 💌 carta centrada */
@@ -368,7 +372,15 @@ html {
 
     /* 🎬 secciones más naturales */
     .hero-pro,
-    .hero-Info,
+    .hero-Info {
+    min-height: 100vh;
+    height: auto;
+    padding: 40px 20px;
+
+    background-image: url("ES5.jpeg");
+    background-size: cover;
+    background-position: center;
+    }
     .hero-locations,
     .hero-countdown {
         height: auto;
@@ -389,6 +401,21 @@ html {
 
     .Quinceanera img {
         width: 220px;
+    }
+
+    .timer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    }
+
+    .timer div {
+        flex: 1;
+    }
+
+    .timer span {
+        font-size: 22px;
     }
 
     .circulito {
