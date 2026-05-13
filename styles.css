@@ -406,12 +406,12 @@ html {
 
     /* 🎬 secciones más naturales */
     .hero-pro::before,
-   .hero-Info::before {
-       content: "";
-       position: absolute;
-      inset: 0;
-       z-index: -1;
-   }
+   
+    .hero-Info {
+        background-size: contain;
+        background-color: black;
+    }
+
     .hero-locations,
     .hero-countdown {
         height: auto;
