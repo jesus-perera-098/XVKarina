@@ -1,11 +1,21 @@
+/* =========================
+   RESET + BASE
+========================= */
+
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    overflow: hidden; /* importante: sin scroll */
-    overflow-y: auto;
+    overflow: hidden; /* 🔒 bloqueado hasta terminar video */
 }
 
-/* ✨ fondo mágico */
+html {
+    scroll-behavior: smooth;
+}
+
+/* =========================
+   💌 CARTA INICIAL
+========================= */
+
 .letter-scene {
     height: 100vh;
     display: flex;
@@ -17,17 +27,16 @@ body {
         url('F2.png') center/cover no-repeat;
 }
 
-/* 💌 CONTENEDOR */
 .letter-wrapper {
     position: relative;
     animation: fadeZoom 2s ease;
 }
 
-/* 💌 CARTA */
 .letter-img {
     width: 420px;
     cursor: pointer;
     transition: 0.4s;
+    position: relative;
 
     filter: drop-shadow(0 0 20px rgba(255,215,0,0.6));
 }
@@ -37,7 +46,7 @@ body {
     filter: drop-shadow(0 0 50px gold);
 }
 
-/* ✨ GLOW SUAVE (sin cuadro raro) */
+/* ✨ glow suave */
 .letter-wrapper::before {
     content: "";
     position: absolute;
@@ -51,19 +60,7 @@ body {
     z-index: -1;
 }
 
-/* ✨ EFECTO BRILLO BONITO */
-
-
-.letter-img {
-    width: 420px;
-    cursor: pointer;
-    transition: 0.4s;
-    position: relative;
-
-    filter: drop-shadow(0 0 20px rgba(255,215,0,0.6));
-}
-
-/* ✨ BRILLO REAL SIN RECTÁNGULO */
+/* ✨ brillo animado */
 .letter-img::after {
     content: "";
     position: absolute;
@@ -89,13 +86,36 @@ body {
     100% { left: 120%; }
 }
 
-/* 🎬 ENTRADA */
+/* 🎬 entrada */
 @keyframes fadeZoom {
     from { opacity: 0; transform: scale(0.7); }
     to { opacity: 1; transform: scale(1); }
 }
 
-/* 🏮 LINTERNAS */
+/* =========================
+   🎬 VIDEO INTRO
+========================= */
+
+#intro-video-container {
+    position: fixed;
+    inset: 0;
+    background: black;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+#introVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================
+   🏮 LINTERNAS
+========================= */
+
 #lantern-container {
     position: fixed;
     width: 100%;
@@ -120,69 +140,124 @@ body {
 }
 
 /* =========================
-   🎬 HERO CINEMATOGRÁFICO
+   🎬 HERO PRINCIPAL
 ========================= */
 
 .hero-pro {
     position: relative;
-    min-height: 100vh;
-    height: auto;
+    height: 100vh;
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 8%;
+    justify-content: center;
 
-    background:
-       /* linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),*/
-        url('F5.jpeg') center/cover no-repeat;
+    background: url('F1.png') center/cover no-repeat;
 }
 
-
-.go-info {
+.hero-wrap {
     position: absolute;
-    bottom: 60px;
-    width: 100%;
+    right: 8%;
+    bottom: -40px;
+}
+
+.Quinceanera img {
+    width: 380px;
+    height: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.circulito {
+    position: absolute;
+    width: 350px;
+    right: -40px;
+    bottom: -40px;
+    z-index: 1;
+}
+
+/* =========================
+   🎬 INFO
+========================= */
+
+.hero-Info {
+    min-height: 100vh;
+    background-image: url("ES5.jpeg");
+    background-size: cover;
+    background-position: center;
+}
+
+/* =========================
+   📍 UBICACIONES
+========================= */
+
+.hero-locations {
+    min-height: 100vh;
+
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 80px;
+    background: url('FC1.jpeg') center/cover no-repeat;
+}
+
+.Tittle {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 20px;
+    color: white;
+}
+
+.locations-cards {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
-.go-info button {
-    padding: 12px 25px;
-    font-size: 18px;
-    font-family: 'Poppins', sans-serif;
-    border: none;
-    border-radius: 30px;
+.location-card {
+    width: 200px;
+    padding: 25px;
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,215,0,0.3);
+    backdrop-filter: blur(10px);
+
+    color: white;
+    text-align: center;
+
     cursor: pointer;
-
-    background: rgba(255, 215, 0, 0.9);
-    color: black;
-
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
     transition: 0.3s;
+
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
 }
 
-.go-info button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 40px gold;
+.location-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+
+    border-radius: 15px;
+    margin-bottom: 12px;
 }
 
-
-.hero-Info {
-    position: relative;
-    min-height: 100vh;
-    height: auto;
-    overflow: visible;
-
-   
-
-   background: url('S2.jpeg') center top / contain no-repeat;
-   background-color: black;
+.location-card h3 {
+    color: goldenrod;
 }
 
+.location-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 0 25px rgba(255,215,0,0.4);
+}
+
+/* =========================
+   ⏳ COUNTDOWN
+========================= */
 
 .hero-countdown {
-    position: relative;
     min-height: 100vh;
 
     display: flex;
@@ -195,9 +270,11 @@ body {
 .countdown-box {
     text-align: center;
     color: white;
+
     background: rgba(0,0,0,0.5);
     padding: 40px;
     border-radius: 20px;
+
     box-shadow: 0 0 30px rgba(255,215,0,0.3);
 }
 
@@ -214,19 +291,10 @@ body {
     margin-bottom: 25px;
 }
 
-.timer div {
-    text-align: center;
-}
-
 .timer span {
     font-size: 40px;
     font-weight: bold;
     color: gold;
-}
-
-.timer p {
-    margin: 0;
-    font-size: 14px;
 }
 
 .countdown-box button {
@@ -237,7 +305,6 @@ body {
 
     background: gold;
     color: black;
-    font-size: 16px;
 
     box-shadow: 0 0 20px gold;
     transition: 0.3s;
@@ -247,120 +314,32 @@ body {
     transform: scale(1.1);
 }
 
-.hero-locations {
-    position: relative;
-    min-height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-     padding-top: 80px;
-
-    background: url('FC1.jpeg') center/cover no-repeat;
-}
-.location-card img {
-    width: 100%;
-    height: 120px;
-    object-fit: cover;
-
-    border-radius: 15px;
-    margin-bottom: 12px;
-
-    box-shadow: 0 0 15px rgba(0,0,0,0.4);
-}
-
-.Tittle {
-    width: 100%;
-    text-align: center;
-
-    position: absolute;
-    top: 40px;
-    left: 0;
-    color: white;
-}
-
-.locations-box {
-    text-align: center;
-    color: white;
-}
-
-.locations-box h2 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 42px;
-    margin-bottom: 30px;
-    color: black;
-}
-
-.buttons-locations {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.locations-cards {
-    display: flex;
-    gap: 25px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.location-card {
-    width: 200px;
-    padding: 25px;
-    border-radius: 20px;
-
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 215, 0, 0.3);
-
-    backdrop-filter: blur(10px);
-
-    color: white;
-    text-align: center;
-
-    cursor: pointer;
-    transition: 0.3s;
-
-    box-shadow: 0 0 15px rgba(0,0,0,0.4);
-}
-
-.location-card h3 {
-    color: goldenrod;
-    margin-bottom: 10px;
-}
-
-.location-card p {
-    font-size: 14px;
-    opacity: 0.8;
-}
-
-.location-card:hover {
-    transform: translateY(-8px) scale(1.05);
-    box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
-}
+/* =========================
+   🦎 PASCAL
+========================= */
 
 #pascal {
     position: fixed;
     width: 70px;
     z-index: 9999;
-
     left: 20px;
     top: 20px;
-
     pointer-events: none;
 
     animation: pascalMove 12s infinite linear;
 }
 
 @keyframes pascalMove {
-    0%   { transform: translate(0,0) rotate(0deg); }
-    25%  { transform: translate(80vw, 10vh) rotate(10deg); }
-    50%  { transform: translate(60vw, 70vh) rotate(-10deg); }
-    75%  { transform: translate(10vw, 60vh) rotate(5deg); }
-    100% { transform: translate(0,0) rotate(0deg); }
+    0%   { transform: translate(0,0); }
+    25%  { transform: translate(80vw, 10vh); }
+    50%  { transform: translate(60vw, 70vh); }
+    75%  { transform: translate(10vw, 60vh); }
+    100% { transform: translate(0,0); }
 }
+
+/* =========================
+   ✨ ANIMACIONES SCROLL
+========================= */
 
 .section-anim {
     opacity: 0;
@@ -373,48 +352,90 @@ body {
     transform: translateY(0);
 }
 
-#intro-video-container {
-    position: fixed;
-    inset: 0;
-    background: black;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 99999;
-}
+/* VERSION PARA CELULAR*/
 
-#introVideo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+@media (max-width: 768px) {
 
-#rotate-warning {
-    position: fixed;
-    inset: 0;
-    background: black;
-    color: white;
-
-    display: none;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-    z-index: 999999;
-}
-
-.rotate-box {
-    padding: 20px;
-    font-size: 18px;
-    font-family: 'Poppins', sans-serif;
-}
-
-@media (max-width: 768px) and (orientation: portrait) {
-    #rotate-warning {
-        display: flex;
-    }
-
+    /* 🔓 permitir scroll normal */
     body {
-        overflow: hidden;
+        overflow-y: auto;
     }
+
+    /* 💌 carta centrada */
+    .letter-img {
+        width: 260px;
+    }
+
+    /* 🎬 secciones más naturales */
+    .hero-pro,
+    .hero-Info,
+    .hero-locations,
+    .hero-countdown {
+        height: auto;
+        min-height: 100vh;
+        padding: 40px 20px;
+    }
+
+    /* 👑 personaje centrado */
+    .hero-wrap {
+        position: relative;
+        right: 0;
+        bottom: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Quinceanera img {
+        width: 220px;
+    }
+
+    .circulito {
+        width: 200px;
+        right: -10px;
+        bottom: -10px;
+    }
+
+    /* 📍 ubicaciones en columna */
+    .locations-cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .location-card {
+        width: 90%;
+        max-width: 320px;
+    }
+
+    /* ⏳ countdown adaptado */
+    .countdown-box {
+        width: 100%;
+        padding: 25px 15px;
+    }
+
+    .countdown-box h2 {
+        font-size: 24px;
+    }
+
+    .timer {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .timer div {
+        width: 45%;
+    }
+
+    .timer span {
+        font-size: 28px;
+    }
+
+    /* 🦎 pascal más pequeño */
+    #pascal {
+        width: 50px;
+    }
+
 }
+
