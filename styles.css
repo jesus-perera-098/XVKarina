@@ -185,16 +185,12 @@ html {
 ========================= */
 
 .hero-Info {
-    position: relative;
+    background-image: url("./ES5.jpeg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 
-    min-height: 100vh;
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: url("ES5.jpg.jpeg") center/cover no-repeat;
+    background-color: black; /* relleno elegante */
 }
 
 /* ✨ contenido centrado */
