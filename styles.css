@@ -184,9 +184,9 @@ html {
    🎬 INFO
 ========================= */
 .hero-Info {
-    background-image: url("ES5.jpg.jpeg");
+    background-image: url("ES5..jpg.jpeg");
     background-size: cover;
-    background-position: center top; /* 👈 CLAVE */
+    background-position: center;
     background-repeat: no-repeat;
 }
 
