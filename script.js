@@ -8,24 +8,37 @@ function enterSite() {
     const video = document.getElementById("introVideo");
     const sound = document.getElementById("introSound");
 
+    // mostrar video
     videoContainer.style.display = "flex";
+
+    // 🔥 FULLSCREEN (AQUÍ VA)
+    if (video.requestFullscreen) {
+        video.requestFullscreen();
+    } else if (video.webkitEnterFullscreen) {
+        video.webkitEnterFullscreen();
+    }
+
+    // reproducir video
     video.play();
 
+    // cuando termine
     video.onended = () => {
 
-        // ocultar intro
+        // salir de fullscreen
+        if (document.fullscreenElement) {
+            document.exitFullscreen();
+        }
+
         videoContainer.style.display = "none";
         document.querySelector(".letter-scene").style.display = "none";
 
-        // 🔓 activar scroll
         document.body.style.overflowY = "auto";
 
-        // 🎬 ir a la primera sección
         document.getElementById("mainContent").scrollIntoView({
             behavior: "smooth"
         });
 
-        // 🎵 audio
+        // audio
         sound.currentTime = 0;
         sound.play().catch(() => {});
     };
