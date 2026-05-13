@@ -200,6 +200,12 @@ html {
     background-repeat: no-repeat;
 }
 
+.test-text {
+    color: white;
+    font-size: 40px;
+    z-index: 2;
+}
+
 /* =========================
    📍 UBICACIONES
 ========================= */
