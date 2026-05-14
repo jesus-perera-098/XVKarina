@@ -208,25 +208,25 @@ html {
 }
 
 .scroll-hint {
-    position: absolute;
+    position: fixed; /* 👈 clave (no depende del layout) */
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    text-align: center;
+
+    z-index: 9999999;
 
     color: white;
-    font-size: 22px;
+    text-align: center;
 
-    z-index: 9999;
+    font-size: 28px;
 
-    opacity: 0;
-    animation: showHint 10s ease forwards;
+    opacity: 1;
+    animation: showHint 6s ease forwards;
 }
 
 .scroll-hint .arrow {
-    font-size: 28px;
+    font-size: 50px;
     animation: bounce 1.2s infinite;
-    text-shadow: 0 0 10px rgba(255,215,0,0.8);
 }
 
 @keyframes bounce {
@@ -237,8 +237,8 @@ html {
 @keyframes showHint {
     0%   { opacity: 0; transform: translate(-50%, -10px); }
     10%  { opacity: 1; transform: translate(-50%, 0); }
-    70%  { opacity: 1; }
-    100% { opacity: 0; pointer-events: none; }
+    80%  { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 .circulito {
