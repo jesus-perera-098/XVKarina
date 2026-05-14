@@ -509,7 +509,7 @@ html {
         margin-left: 0; /* ❌ quitamos el offset raro */
         text-align: center;
         max-width: 80%;
-        font-size: 14px;
+        font-size: 40px;
     }
    
     .hero-Info {
@@ -553,12 +553,12 @@ html {
 
     .circulito {
         position: relative; /* 👈 clave */
-        width: 240px;
+        width: 600px;
 
         right: auto;
         bottom: auto;
 
-        margin-bottom: -60px; /* 👈 lo acerca a la quinceañera */
+        margin-bottom: -100px; /* 👈 lo acerca a la quinceañera */
     }
 
     /* 📍 ubicaciones en columna */
