@@ -612,14 +612,25 @@ html {
         font-size: 14px;
     }
    
-    .scroll-hint {
-        bottom: 15px;
-        font-size: 20px;
-    }
+   .scroll-hint {
+    position: absolute;
+    top: 15px; /* arriba como quieres */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    font-size: 26px;
+    text-align: center;
+
+    color: white;
+    z-index: 99999;
+
+    opacity: 0;
+    animation: showHint 6s ease forwards;
+}
 
     .scroll-hint .arrow {
-        font-size: 30px;
-    }
+    font-size: 42px;
+}
     
 
       /* 🔝 sección hacia arriba */
