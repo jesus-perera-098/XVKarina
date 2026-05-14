@@ -159,6 +159,38 @@ html {
     background-repeat: no-repeat;
 }
 
+/* 🆕 contenedor izquierda */
+.hero-left {
+    position: absolute;
+    top: 40px;
+    left: 15%;
+    
+    display: flex;
+    flex-direction: column; /* 🔥 esto permite apilar fotos */
+    gap: 1px;
+}
+
+/* 🆕 imagen LK1 */
+.lk1 {
+    width: 400px;
+    height: auto;
+
+    border-radius: 15px;
+
+    
+
+    transition: 0.3s;
+}
+
+
+.lk-text {
+    color: white;
+    margin-left: 80px;
+    text-shadow: 
+        0 0 5px rgba(0,0,0,0.7),
+        0 0 10px rgba(0,0,0,0.5);
+    
+}
 .hero-wrap {
     position: absolute;
     right: 8%;
@@ -258,7 +290,7 @@ html {
 
 .hero-locations {
     min-height: 100vh;
-
+    position: relative; /* 👈 CLAVE */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -437,7 +469,38 @@ html {
     }
 
     /* 🎬 secciones más naturales */
-    .hero-pro::before,
+    .hero-pro {
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+    }
+
+
+    /* 👈 esto arregla TODO tu lado izquierdo */
+    .hero-left {
+        position: relative; /* ❌ quitamos absolute */
+        top: auto;
+        left: auto;
+
+        width: 100%;
+        align-items: center;
+        margin-bottom: 20px;
+        gap: 10px;
+    }
+
+    /* 👈 imágenes responsivas reales */
+    .lk1 {
+        width: 80%;
+        max-width: 260px;
+    }
+
+    /* 👈 texto centrado correctamente */
+    .lk-text {
+        margin-left: 0; /* ❌ quitamos el offset raro */
+        text-align: center;
+        max-width: 80%;
+        font-size: 14px;
+    }
    
     .hero-Info {
         background-size: contain;
@@ -452,8 +515,11 @@ html {
     }
 
     /* 👑 personaje centrado */
-    .hero-wrap {
+     .hero-wrap {
         position: relative;
+        right: auto;
+        bottom: auto;
+        margin-top: 10px;
     }
 
     .Quinceanera img {
@@ -510,4 +576,6 @@ html {
     }
 
 }
+
+
 
