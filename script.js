@@ -55,6 +55,13 @@ function enterSite() {
             console.log("Autoplay bloqueado");
         });
     };
+    // 👇 mostrar flecha después del video
+const hint = document.querySelector(".scroll-hint");
+
+if (hint) {
+    hint.style.opacity = "1";
+    hint.style.animation = "showHint 6s ease forwards";
+}
 }
 
 /* 🏮 LINTERNAS */
