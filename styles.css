@@ -208,7 +208,7 @@ html {
 }
 
 .scroll-hint {
-    position: fixed; /* 👈 clave (no depende del layout) */
+    position: absolute; /* 👈 clave (no depende del layout) */
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
