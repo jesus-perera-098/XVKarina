@@ -6,25 +6,34 @@ window.onload = () => {
 function enterSite() {
     const videoContainer = document.getElementById("intro-video-container");
     const video = document.getElementById("introVideo");
-    const sound = document.getElementById("introSound");
+    const music = document.getElementById("music");
 
-    // mostrar video
     videoContainer.style.display = "flex";
 
-    // 🔥 FULLSCREEN (AQUÍ VA)
+    // fullscreen
     if (video.requestFullscreen) {
         video.requestFullscreen();
     } else if (video.webkitEnterFullscreen) {
         video.webkitEnterFullscreen();
     }
 
-    // reproducir video
-    video.play();
+    // 👇 reproducir video correctamente
+    video.muted = false;
+    video.play().catch(err => {
+        console.log("Error video:", err);
+    });
 
-    // cuando termine
+    // 👇 desbloquear audio SIN romper el video
+    document.addEventListener("click", () => {
+        music.play().then(() => {
+            music.pause();
+            music.currentTime = 0;
+        });
+    }, { once: true });
+
+    // cuando termine el video
     video.onended = () => {
 
-        // salir de fullscreen
         if (document.fullscreenElement) {
             document.exitFullscreen();
         }
@@ -38,9 +47,13 @@ function enterSite() {
             behavior: "smooth"
         });
 
-        // audio
-        sound.currentTime = 0;
-        sound.play().catch(() => {});
+        // 🎵 ahora sí reproducir música
+        music.currentTime = 0;
+        music.volume = 0.5;
+
+        music.play().catch(() => {
+            console.log("Autoplay bloqueado");
+        });
     };
 }
 
