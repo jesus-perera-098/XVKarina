@@ -532,8 +532,17 @@ html {
         margin-top: 10px;
     }
 
+   .circulito {
+        position: relative;
+        width: 240px;
+        margin-bottom: -100px;
+        z-index: 1;
+    }
+
     .Quinceanera img {
         width: 300px;
+        position: relative;
+        z-index: 2;
     }
 
     .timer {
