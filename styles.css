@@ -509,7 +509,7 @@ html {
         margin-left: 0; /* ❌ quitamos el offset raro */
         text-align: center;
         max-width: 80%;
-        font-size: 40px;
+        font-size: 14px;
     }
    
     .hero-Info {
