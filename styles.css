@@ -548,12 +548,12 @@ html {
     }
 
     .timer span {
-        font-size: 22px;
+        font-size: 14px;
     }
 
     .circulito {
         position: relative; /* 👈 clave */
-        width: 1200px;
+        width: 600px;
 
         right: auto;
         bottom: auto;
