@@ -623,13 +623,20 @@ html {
 
 
 
-    .evento-box {
-        flex-direction: column;
-        gap: 30px;
-        align-items: center;
+   .evento {
+        background: rgba(0, 0, 0, 0.4);
+        padding: 16px;
+        border-radius: 14px;
+        backdrop-filter: blur(6px);
     }
 
-    
+    .evento h3,
+    .hora,
+    .lugar {
+        text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+    }
+
+
 
     .hero-locations,
     .hero-countdown {
@@ -666,13 +673,7 @@ html {
     }
 
      .circulito {
-        position: relative; /* 👈 clave */
-        width: 240px;
-
-        right: auto;
-        bottom: auto;
-
-        margin-bottom: -60px; /* 👈 lo acerca a la quinceañera */
+        display: none;
     }
 
     /* 📍 ubicaciones en columna */
@@ -704,6 +705,8 @@ html {
     }
 
 }
+
+
 
 
 
