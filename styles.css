@@ -206,8 +206,8 @@ html {
 
 .circulito {
     position: absolute;
-    width: 350px;
-    right: -40px;
+    width: 600px;
+    right: -130px;
     bottom: -40px;
     z-index: 1;
 }
