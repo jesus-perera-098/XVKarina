@@ -231,7 +231,7 @@ html {
     min-height: 100vh;
 
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 
     background-image: url("F10.jpeg");
@@ -240,6 +240,42 @@ html {
     background-repeat: no-repeat;
 }
 
+/* contenedor general */
+.padres-box {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* título */
+.padres-titulo {
+    color: #d4af37;
+    font-family: 'Great Vibes', cursive;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+/* contenedor padre/madre */
+.padres-contenido {
+    display: flex;
+    justify-content: top;
+    gap: 80px; /* separación horizontal */
+}
+
+/* etiquetas */
+.label {
+    color: gold;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* nombres */
+.nombre-padre,
+.nombre-madre {
+    color: white;
+    max-width: 220px;
+    line-height: 1.4;
+}
+
 /* ✨ contenido centrado */
 .info-content {
     text-align: center;
@@ -248,7 +284,7 @@ html {
 
 /* ✨ nombre elegante */
 .nombre {
-    font-family: 'Great Vibes', cursive;
+    
     font-size: 60px;
     color: #d4af37; /* dorado elegante */
 
@@ -294,6 +330,36 @@ html {
     letter-spacing: 2px;
 }
 
+.evento-box {
+    display: flex;
+    
+    justify-content: center;
+    gap: 60px;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.evento {
+    max-width: 220px;
+    color: white;
+}
+
+.evento h3 {
+    color: #d4af37;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+    .hora {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.lugar {
+    color: gold;
+    margin-top: 10px;
+}
 /* =========================
    📍 UBICACIONES
 ========================= */
@@ -509,13 +575,61 @@ html {
         margin-left: 0; /* ❌ quitamos el offset raro */
         text-align: center;
         max-width: 80%;
-        font-size: 16px;
+        font-size: 14px;
     }
    
+    
+
+      /* 🔝 sección hacia arriba */
     .hero-Info {
-        background-size: contain;
-        background-color: black;
+        align-items: flex-start;
+        padding-top: 60px;
     }
+
+    /* 📦 contenedor */
+    .padres-box {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    /* 🧾 contenido en columna */
+    .padres-contenido {
+        display: flex;
+        flex-direction: column; /* 👈 clave */
+        gap: 25px;
+        align-items: center;
+    }
+
+    /* 🏷 etiquetas */
+    .label {
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    /* 👤 nombres */
+    .nombre-padre,
+    .nombre-madre {
+        font-size: 15px;
+        max-width: 260px;
+        line-height: 1.5;
+    }
+
+    /* ✨ título */
+    .padres-titulo {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+
+
+    .evento-box {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+    
 
     .hero-locations,
     .hero-countdown {
@@ -532,14 +646,8 @@ html {
         margin-top: 10px;
     }
 
-   .circulito {
-        display: none;
-    }
-
     .Quinceanera img {
-        width: 300px;
-        position: relative;
-        z-index: 2;
+        width: 220px;
     }
 
     .timer {
@@ -554,10 +662,18 @@ html {
     }
 
     .timer span {
-        font-size: 14px;
+        font-size: 22px;
     }
 
-  
+     .circulito {
+        position: relative; /* 👈 clave */
+        width: 240px;
+
+        right: auto;
+        bottom: auto;
+
+        margin-bottom: -60px; /* 👈 lo acerca a la quinceañera */
+    }
 
     /* 📍 ubicaciones en columna */
     .locations-cards {
@@ -588,6 +704,7 @@ html {
     }
 
 }
+
 
 
 
