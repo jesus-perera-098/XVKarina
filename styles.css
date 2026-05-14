@@ -553,12 +553,12 @@ html {
 
     .circulito {
         position: relative; /* 👈 clave */
-        width: 600px;
+        width: 300px;
 
         right: auto;
         bottom: auto;
 
-        margin-bottom: 100px; /* 👈 lo acerca a la quinceañera */
+        margin-bottom: 50px; /* 👈 lo acerca a la quinceañera */
     }
 
     /* 📍 ubicaciones en columna */
