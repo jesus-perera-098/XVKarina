@@ -553,7 +553,7 @@ html {
 
     .circulito {
         position: relative; /* 👈 clave */
-        width: 300px;
+        width: 150px;
 
         right: auto;
         bottom: auto;
