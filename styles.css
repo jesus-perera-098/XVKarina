@@ -209,16 +209,18 @@ html {
 
 .scroll-hint {
     position: absolute;
-    bottom: 20px;
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
 
     color: white;
-    font-size: 14px;
+    font-size: 22px;
 
-    opacity: 1;
     z-index: 9999;
+
+    opacity: 0;
+    animation: showHint 10s ease forwards;
 }
 
 .scroll-hint .arrow {
@@ -233,8 +235,8 @@ html {
 }
 
 @keyframes showHint {
-    0%   { opacity: 0; }
-    10%  { opacity: 1; }
+    0%   { opacity: 0; transform: translate(-50%, -10px); }
+    10%  { opacity: 1; transform: translate(-50%, 0); }
     70%  { opacity: 1; }
     100% { opacity: 0; pointer-events: none; }
 }
@@ -612,11 +614,11 @@ html {
    
     .scroll-hint {
         bottom: 15px;
-        font-size: 12px;
+        font-size: 20px;
     }
 
     .scroll-hint .arrow {
-        font-size: 22px;
+        font-size: 30px;
     }
     
 
