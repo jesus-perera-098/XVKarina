@@ -319,6 +319,8 @@ html {
 .fecha-evento {
     color: white;
     font-size: 18px;
+    font-family: 'Poppins', sans-serif; /* 👈 quitamos cursiva */
+    font-style: normal; /* 👈 por si acaso */
 }
 
 /* ✨ contenido centrado */
@@ -691,6 +693,8 @@ html {
 
    .fecha-evento {
        font-size: 16px;
+       font-family: 'Poppins', sans-serif;
+       font-style: normal;
    }
 
 
