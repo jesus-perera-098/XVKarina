@@ -312,15 +312,13 @@ html {
     line-height: 1.4;
 }
 
-.fecha-evento {
+.fecha-box {
     margin-top: 25px;
-    font-size: 22px;
-    color: #d4af37; /* dorado elegante */
-    font-family: 'Great Vibes', cursive;
+}
 
-    text-shadow: 
-        0 0 10px rgba(212,175,55,0.5),
-        0 0 20px rgba(212,175,55,0.3);
+.fecha-evento {
+    color: white;
+    font-size: 18px;
 }
 
 /* ✨ contenido centrado */
@@ -687,10 +685,12 @@ html {
         margin-bottom: 15px;
     }
 
-   .fecha-evento {
+   .fecha-box {
        margin-top: 20px;
-       font-size: 18px; /* más pequeño en móvil */
-       text-align: center;
+   }
+
+   .fecha-evento {
+       font-size: 16px;
    }
 
 
