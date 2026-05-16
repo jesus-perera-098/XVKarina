@@ -318,8 +318,7 @@ html {
 
 .fecha-evento {
     color: white;
-    font-size: 18px;
-    font-family: 'Poppins', sans-serif; /* 👈 quitamos cursiva */
+    font-size: 18px; /* 👈 quitamos cursiva */
     font-style: normal; /* 👈 por si acaso */
 }
 
