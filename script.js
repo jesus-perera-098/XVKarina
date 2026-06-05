@@ -86,7 +86,7 @@ function generateLanterns() {
 
 /* 📍 MAPAS */
 function openChurch() {
-    window.open("https://maps.app.goo.gl/RpBYg8jtHNT9d7LJ6", "_blank");
+    window.open("https://maps.app.goo.gl/RNg838it6GCbQs1a6", "_blank");
 }
 
 function openHall() {
